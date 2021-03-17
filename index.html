@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div id="scoreboard">0:0</div>
-    <div id="game-log">GAME START</div>
-    <div id="item-selection">
-        <button class="btn" value="rock">Rock</button>
-        <button class="btn" value="paper">Paper</button>
-        <button class="btn" value="scissors">Scissors</button>
+    <div class="game">
+        <section class="game-screen">
+            <div id="game-log-container" class="game-log-container">
+                <div class="game-log">
+                    GAME START
+                </div>
+            </div>
+            <div id="scoreboard-container" class="scoreboard-container">
+                <h5 class="you-text">YOU</>
+                <h2 id ="player-score">00</h2>
+                <h2 id ="player-score">:</h2>
+                <h2 id="computer-score">00</h2>
+                <h5 class="computer-text">COMPUTER</>
+            </div>
+        </section>
+        <section class="option-screen">
+            <div id="item-selection-container" class="item-selection-container">
+                <div class="choose-text">Choose your weapon:</div>
+                <button class="btn" value="rock">Rock</button>
+                <button class="btn" value="paper">Paper</button>
+                <button class="btn" value="scissors">Scissors</button>
+            </div>
+        </section>
     </div>
-
     <script src="./js/index.js" type="module"></script>
 </body>
 </html>

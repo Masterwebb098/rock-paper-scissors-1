@@ -1,4 +1,4 @@
-import {playGame, computerPlay, gameStatus} from './game.js'
+import {playGame, computerPlay, scoreUpdate} from './game.js'
 
 const scoreBoard = document.getElementById('scoreboard');
 const gameLog = document.getElementById('game-log');
@@ -12,10 +12,13 @@ let gameScore = {
 
 buttons.forEach(button => {
     button.addEventListener('click', function(){
-        // let score = [0, 0];
         let roundResult = playGame.playRound(button.value, computerPlay());
-        // playGame.liveUpdate('scoreboard', 'game-log', test);
-        let gameResult = gameStatus(gameScore, roundResult);
+        let gameResult = scoreUpdate(gameScore, roundResult);
+        
         playGame.liveUpdate(scoreBoard, gameLog, gameResult);
+
+        if (gameResult[0] === 5 || gameResult[1] === 5) {
+            gameLog.textContent = 'HELLO MOTHERFUCKER'
+        }
     })
 })

@@ -1,0 +1,92 @@
+@import url('http://fonts.cdnfonts.com/css/molot');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background: brown;
+    height: 550px;
+    width: 800px;
+    min-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-screen {
+    background: cornflowerblue;
+    flex: 2;
+    display: flex;
+}
+
+.game-log-container {
+    background: darkgreen;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-log {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    border: 0.90px solid #333333;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #333333;
+    font-family: molot;
+    color: rgb(238, 238, 238);
+}
+
+.scoreboard-container {
+    background: darkmagenta;
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+.scoreboard-container h2 {
+    font-weight: 800;
+    line-height: 1em;
+
+}
+
+
+.option-screen {
+    background: crimson;
+    flex: 1.5;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .game-screen {
+        flex-direction: column;
+    }
+
+    .game-log-container {
+        flex: 0.7;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    .game {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+}

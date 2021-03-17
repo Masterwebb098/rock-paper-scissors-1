@@ -1,4 +1,5 @@
-const gameStatus = (gameScore, array) => {
+// this function will return an array from an object [playerScore, computerScore, gameLog]
+const scoreUpdate = (gameScore, array) => {
     let key = (Object.keys(gameScore));
     for(let i = 0; i < 2;i++) {
         gameScore[key[i]] += array[i];
@@ -18,18 +19,17 @@ const playGame = (() => {
                 (select === 'scissors' && computerSelection === 'paper') ||
                 (select === 'paper' && computerSelection === 'rock')
             ) {
-                [boards[0], boards[1], boards[2]] = [1, 0, `You Win! ${select} beats ${computerSelection}.`];
+                boards = [1, 0, `You Win! ${select} beats ${computerSelection}.`];
                 return boards;
             } else if (
                 (computerSelection === 'rock' && select === 'scissors') ||
                 (computerSelection === 'scissors' && select === 'paper') ||
                 (computerSelection === 'paper' && select === 'rock')
             ) {
-                // this.announcer = `You lose! ${computerSelection} beats ${select}.`;
-                [boards[0], boards[1], boards[2]] = [0, 1, `You lose! ${computerSelection} beats ${select}.`];
+                boards  = [0, 1, `You lose! ${computerSelection} beats ${select}.`];
                 return boards;
             } else if (computerSelection === select) {
-                [boards[0], boards[1], boards[2]] = [0, 0, `Draw!`];
+                boards  = [0, 0, `Draw!`];
                 return boards;
             }
         },
@@ -51,5 +51,5 @@ const computerPlay = () => {
 
 export {playGame,
         computerPlay,
-        gameStatus
+        scoreUpdate
 };
