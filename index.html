@@ -8,29 +8,35 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="game">
+    <div id="game" class="game">
         <section class="game-screen">
-            <div id="game-log-container" class="game-log-container">
-                <div class="game-log">
-                    GAME START
+            <div class="game-log-container">
+                <div id="game-log" class="game-log">
+                    ROCK PAPER SCISSORS
                 </div>
             </div>
             <div id="scoreboard-container" class="scoreboard-container">
-                <h5 class="you-text">YOU</>
-                <h2 id ="player-score">00</h2>
-                <h2 id ="player-score">:</h2>
-                <h2 id="computer-score">00</h2>
-                <h5 class="computer-text">COMPUTER</>
+                <h5 class="you-text indicator">YOU</>
+                <h3 id="player-score" class="score-text">0</h3>
+                <h2 class="score-text">:</h2>
+                <h3 id="computer-score" class="score-text">0</h3>
+                <h5 class="computer-text indicator">COMPUTER</>
             </div>
         </section>
         <section class="option-screen">
-            <div id="item-selection-container" class="item-selection-container">
-                <div class="choose-text">Choose your weapon:</div>
-                <button class="btn" value="rock">Rock</button>
-                <button class="btn" value="paper">Paper</button>
-                <button class="btn" value="scissors">Scissors</button>
+            <div class="item-selection-container">
+                <div class="choose-text">CHOOSE YOUR WEAPON:</div>
+                <div id="select-weapon" class="btn-container">
+                    <img src="./images/rock.svg" id="rock" class="selection" height="150px">
+                    <img src="./images/paper.svg" id="paper" class="selection" height="150px">
+                    <img src="./images/scissors.svg" id="scissors" class="selection" height="150px">
+                </div>
             </div>
         </section>
+    </div>
+    <div id="result">
+        <h1>Results</h1>
+        <button id="playButton" class="button-1">PLAY AGAIN</button>
     </div>
     <script src="./js/index.js" type="module"></script>
 </body>

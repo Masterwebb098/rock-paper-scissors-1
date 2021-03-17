@@ -19,7 +19,7 @@ const playGame = (() => {
                 (select === 'scissors' && computerSelection === 'paper') ||
                 (select === 'paper' && computerSelection === 'rock')
             ) {
-                boards = [1, 0, `You Win! ${select} beats ${computerSelection}.`];
+                boards = [1, 0, `You win! ${select} beats ${computerSelection}.`];
                 return boards;
             } else if (
                 (computerSelection === 'rock' && select === 'scissors') ||
@@ -36,9 +36,23 @@ const playGame = (() => {
 
         liveUpdate (scoreBoard, gameLog, results) {
             
-            scoreBoard.textContent = `${results[0]} : ${results[1]}`;
+            scoreBoard[0].textContent = `${results[0]}`
+            scoreBoard[1].textContent = `${results[1]}`
             gameLog.textContent = `${results[2]}`;
 
+        },
+         endGame (resultArray) {
+            let blur = document.getElementById('game');
+            blur.classList.add('blur');
+            let result = document.getElementById('result');
+            result.classList.add('active');
+            let announceText = ``;
+            if (resultArray[0] > resultArray[1]) {
+                announceText = `You have won the game!`
+            } else {
+                announceText = 'You have lost. Computer has won the game !'
+            }
+            result.querySelector('h1').textContent = announceText;
         }
     }
 })();
@@ -51,5 +65,5 @@ const computerPlay = () => {
 
 export {playGame,
         computerPlay,
-        scoreUpdate
+        scoreUpdate,
 };
