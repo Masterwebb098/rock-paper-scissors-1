@@ -33,7 +33,3 @@ selection.forEach(remove => {
 playAgainButton.addEventListener('click', function() {
     window.location.reload(true);
 })
-
-
-
-

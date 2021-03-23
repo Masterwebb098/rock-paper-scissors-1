@@ -1,26 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Open sans';
+    font-family: 'Open sans', sans-serif;
 }
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #b6b3aa;
+    background: rgb(241, 241, 241);
 }
-
 .game {
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 100px;
     margin-left: 100px;
     background: #ffd538;
-    background: -webkit-linear-gradient(to right, #FFD200, #F7971E); 
-    background: linear-gradient(to right, #FFD200, #F7971E);
     height: 550px;
     width: 800px;
     min-width: 300px;
@@ -29,45 +26,42 @@ body {
     flex-direction: column;
     border: #ffd538;
     border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 30px 6px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-
 .blur {
     transition: 0.5s;
     filter: blur(20px);
     pointer-events: none;
     user-select: none;
 }
-
 .game-screen {
     flex: 2;
     display: flex;
 }
-
 .game-log-container {
     min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .game-log {
     width: 90%;
     max-width: 268px;
     height: 85%;
     display: flex;
-    border: 0.90px solid #333333;
-    border-radius: 20px;
-    font-size: 50px;
     background-color: #333333;
-    font-weight: 800;
+    justify-content: center;
+    align-items: center;
+    border: 0.90px solid #333333;
+    border-radius: 30px;
+    font-family: 'Chango';
+    font-size: 40px;
+    font-weight: 400;
     line-height: 1.2em;
     color: rgb(238, 238, 238);
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
-
 .scoreboard-container {
     flex: 1;
     position: relative;
@@ -75,14 +69,23 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .score-text {
     position: relative;
     display: flex;
     justify-content: center;
     align-content: center;
     font-weight: 800;
-    font-size: 150px;
+    font-size: 200px;
+}
+.indicator {
+    position: absolute;
+    top: 20px;
+    font-weight: 300;
+    font-size: 20px;
+}
+.indicator-icon {
+    position: absolute;
+    top: -8px;
 }
 
 .you-text {
@@ -93,13 +96,9 @@ body {
     right: 40px;
 }
 
-.indicator {
-    position: absolute;
-    top: 20px;
-    font-weight: 300;
-    font-size: 20px;
+.human-icon {
+    left: -35px;
 }
-
 .option-screen {
     flex: 1.5;
     min-width: 300px;
@@ -107,19 +106,16 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .item-selection-container {
     position: relative;
     width: 100%;
     height: 100%;
     border: 0.90px solid #333333;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
     background-color: #333333;
     display: flex;
     flex-direction: column;
 }
-
 .choose-text {
     height: 40px;
     display: flex;
@@ -138,18 +134,16 @@ body {
 }
 .selection {
     border: transparent;
-    border-radius: 20px;
+    border-radius: 30px;
     transition:0.5s;
 }
-
 .selection:hover {
-    transform: translateY(-8px);
+    transform: translateY(-2px);
     cursor: pointer;
 }
 .selection:active {
     transform: scale(0.95);
 }
-
 #result {
     position: absolute;
     display: flex;
@@ -160,18 +154,15 @@ body {
     opacity: 0;
     transition: 0.5s;
 }
-
 #result h1 {
-    font-size: 30px;
+    font-size: 20px;
     color: #181818;
 }
-
 #result.active {
     visibility: visible;
     opacity: 1;
     transition: 0.5s;
 }
-
 .button-1 {
     border-radius: 6px;
     background-color:  #ffd538;
@@ -187,18 +178,12 @@ body {
     cursor: pointer;
     outline: none;
 }
-
 .button-1:hover {
     background-color: #d4b131;
   }
 .button-1:active {
     transform: scale(0.95);
   }
-
-
-
-
-
 @media only screen and (max-width: 860px) {
     .game-screen {
         flex-direction: column;
@@ -208,7 +193,7 @@ body {
     }
     .game-log {
         max-width: 90%;
-        font-size: 40px;
+        font-size: 30px;
     }
     .score-text {
         font-size: 120px;
@@ -225,17 +210,10 @@ body {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
-    
-
 }
-
 @media only screen and (max-width: 330px) {
-    #result h1 {
-        font-size: 20px;
-    }
     body {
         margin: auto;
         width: 100%;
     }
-    
 }
