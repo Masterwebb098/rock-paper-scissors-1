@@ -174,7 +174,7 @@ body {
     margin-top: 10px;
     width: 220px;
     margin: auto;
-    transition: all 0.2s;
+    transition: all 0.1s;
     cursor: pointer;
     outline: none;
 }
@@ -211,9 +211,23 @@ body {
         border-bottom-right-radius: 0px;
     }
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 420px) {
     body {
         margin: auto;
         width: 100%;
+        height: 100%;
+    }
+    #result h1 {
+        font-size: 15px;
+        color: #181818;
+    }
+    .selection {
+        height: 130px;
+    }
+    .selection:hover {
+        transform: translateY(-0px);
+    }
+    .selection:active {
+        transform: scale(0.95);
     }
 }
