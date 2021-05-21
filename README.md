@@ -27,7 +27,7 @@ A simple beginner webpage that uses HTML, CSS, and Javascript. It runs a game of
 ## Development
 
 1. Clone the project <br>
-   `git clone https://github.com/TheBoringDude/creep.git`
+   `git clone https://github.com/re-nanashi/rock-paper-scissors.git`
 
 2. Go the directory and run through live server
 
