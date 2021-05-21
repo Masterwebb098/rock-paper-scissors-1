@@ -1,3 +1,4 @@
+//Functions for hover
 export function activeHover() {
 	if (this.id === 'rock') {
 		this.src = './src/images/rock-hover.svg';

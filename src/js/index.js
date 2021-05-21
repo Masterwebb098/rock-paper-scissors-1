@@ -8,11 +8,13 @@ const gameLog = document.getElementById('game-log');
 const selection = document.getElementById('select-weapon').childNodes;
 const playAgainButton = document.getElementById('result').childNodes[3];
 
+//Object: Game score
 let gameScore = {
 	playerScore: 0,
 	computerScore: 0,
 };
 
+//Event: Player selection
 selection.forEach((weapon) => {
 	weapon.addEventListener('click', function () {
 		let roundResult = playGame.playRound(weapon.id, computerPlay());
@@ -24,6 +26,7 @@ selection.forEach((weapon) => {
 	});
 });
 
+//Event: Simple hover transitions
 selection.forEach((select) => {
 	select.addEventListener('mouseenter', activeHover);
 });
