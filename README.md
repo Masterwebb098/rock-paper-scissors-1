@@ -12,7 +12,7 @@ A simple beginner webpage that uses HTML, CSS, and Javascript. It runs a game of
 
 ### Mobile Display
 
-![alt text](./src/images/readme/demo-mobile.png?raw=true | width=300)
+<img src="./src/images/readme/demo-mobile.png" height="700">
 
 ### Things that I learned
 
