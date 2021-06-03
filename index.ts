@@ -28,6 +28,7 @@ interface Paddle {
 interface State {
 	ball: Ball;
 	paddle: Paddle;
+	ballTimer?: number | void;
 }
 
 //Application state
@@ -43,3 +44,51 @@ let state: State = {
 		y: 0,
 	},
 };
+
+let circle = document.querySelector('svg circle');
+let rect = document.querySelector('svg rect');
+
+//render will render the state to the page elements
+function render(state: State): void {
+	circle?.setAttribute('cx', String(state.ball.x));
+	circle?.setAttribute('cy', String(state.ball.y));
+	rect?.setAttribute('y', String(state.paddle.y));
+}
+
+render(state);
+
+function animate(): void {
+	state.ball.x += state.ball.vectorX;
+	state.ball.y += state.ball.vectorY;
+
+	if (
+		state.ball.y - BALL_RADIUS <= 0 ||
+		state.ball.y - BALL_RADIUS >= window.innerHeight
+	) {
+		state.ball.vectorY *= -1;
+	}
+
+	if (state.ball.x + BALL_RADIUS >= window.innerWidth) {
+		state.ball.vectorX *= -1;
+	}
+
+	if (
+		state.ball.x - BALL_RADIUS <= PADDLE_X + PADDLE_WIDTH &&
+		state.ball.y >= state.paddle.y &&
+		state.ball.y <= state.paddle.y + PADDLE_HEIGHT
+	) {
+		state.ball.vectorX *= -1;
+	}
+
+	render(state);
+}
+
+state.ballTimer = setInterval(animate, 16);
+
+function adjustPaddle(e: HTMLInputElement | any) {
+	state.paddle.y = e.clientY - PADDLE_HEIGHT / 2;
+
+	render(state);
+}
+
+document.body.addEventListener('mousemove', adjustPaddle);
