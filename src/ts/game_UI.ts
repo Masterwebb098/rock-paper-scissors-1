@@ -45,10 +45,12 @@ class View {
 		}
 	}
 
+	//Handler is round game play
+	//Another one would be about scores and logs
 	selectWeapon(handler: Function) {
 		this.userSelect?.forEach((weapon) => {
 			weapon.addEventListener('click', function () {
-				let roundResult = handler(weapon.id);
+				handler(weapon.id);
 			});
 		});
 	}
@@ -67,3 +69,5 @@ class View {
 		});
 	}
 }
+
+export { View as UI };
