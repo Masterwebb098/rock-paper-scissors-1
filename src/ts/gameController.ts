@@ -7,8 +7,8 @@ class Controller {
 		this.ui = ui;
 	}
 
-	handleSelectWeapon(selection: string): number[] {
-		return this.game.playRound(selection);
+	handleSelectWeapon(selection: string): void {
+		this.game.playRound(selection);
 	}
 
 	handleUserInterfaceEvents(): void {

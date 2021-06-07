@@ -14,7 +14,7 @@ class View {
 	activeHover(event: Event): void {
 		const targetId: string = (<HTMLInputElement>event.target).id;
 		let targetSource: string = (<HTMLInputElement>event.target).src;
-
+		console.log(`lol`);
 		if (targetId === 'rock') {
 			targetSource = './src/images/rock-hover.svg';
 		}

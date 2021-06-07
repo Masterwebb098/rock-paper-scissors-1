@@ -6,7 +6,7 @@ class Game {
 		return [this._playerScore, this._computerScore];
 	}
 
-	addScore(player: number, computer: number): void {
+	private addScore(player: number, computer: number): void {
 		this._playerScore += player;
 		this._computerScore += computer;
 	}
