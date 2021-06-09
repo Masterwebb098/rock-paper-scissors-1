@@ -5,9 +5,24 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
+				test: /\.ts$|tsx/,
 				use: 'ts-loader',
 				exclude: /node_modules/,
+			},
+			{
+				test: /\.css$/i,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
+			},
+			{
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				loader: 'file-loader',
+				options: {
+					outputPatch: './dist/images',
+				},
 			},
 		],
 	},
