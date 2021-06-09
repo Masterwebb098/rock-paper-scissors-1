@@ -4,7 +4,7 @@
 
 A simple webpage that let users play rock-paper-scissors against the computer.
 
-**Link To Demo**: https://re-nanashi.github.io/rock-paper-scissors/
+**Link To Demo**: Currently on refactoring stage
 
 ## Description
 
