@@ -83,10 +83,6 @@ body {
 	font-weight: 300;
 	font-size: 20px;
 }
-.indicator-icon {
-	position: absolute;
-	top: -8px;
-}
 
 .you-text {
 	left: 40px;
@@ -96,9 +92,6 @@ body {
 	right: 40px;
 }
 
-.human-icon {
-	left: -35px;
-}
 .option-screen {
 	flex: 1.5;
 	min-width: 300px;

@@ -14,7 +14,7 @@ class Game {
 		return choice[Math.floor(Math.random() * choice.length)];
 	}
 
-	public get scores() {
+	public get scores(): number[] {
 		return [this._playerScore, this._computerScore];
 	}
 
