@@ -1,6 +1,6 @@
 ![demo](./src/images/readme/demo.png?raw=true)
 
-# Rock Paper Scissors Web Game
+# (CURRENTLY REFACTORING) Rock Paper Scissors Web Game
 
 A simple webpage that let users play rock-paper-scissors against the computer.
 
