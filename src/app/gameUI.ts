@@ -1,4 +1,4 @@
-//github.com/migace/js-plain-mvc/blob/master/src/View.ts
+//github.com/migace/js-plain-mvc/blob/master/src/assets/View.ts
 
 class GameInterface {
 	scoreBoard: HTMLElement | null;
@@ -15,15 +15,15 @@ class GameInterface {
 		const target: HTMLImageElement = <HTMLImageElement>event.target;
 
 		if (target.id === 'rock') {
-			target.src = './src/images/rock-hover.svg';
+			target.src = '../src/assets/images/rock-hover.svg';
 		}
 
 		if (target.id === 'paper') {
-			target.src = './src/images/paper-hover.svg';
+			target.src = '../src/assets/images/paper-hover.svg';
 		}
 
 		if (target.id === 'scissors') {
-			target.src = './src/images/scissors-hover.svg';
+			target.src = '../src/assets/images/scissors-hover.svg';
 		}
 	}
 
@@ -31,15 +31,15 @@ class GameInterface {
 		const target: HTMLImageElement = <HTMLImageElement>event.target;
 
 		if (target.id === 'rock') {
-			target.src = './src/images/rock.svg';
+			target.src = '../src/assets/images/rock.svg';
 		}
 
 		if (target.id === 'paper') {
-			target.src = './src/images/paper.svg';
+			target.src = '../src/assets/images/paper.svg';
 		}
 
 		if (target.id === 'scissors') {
-			target.src = './src/images/scissors.svg';
+			target.src = '../src/assets/images/scissors.svg';
 		}
 	}
 
