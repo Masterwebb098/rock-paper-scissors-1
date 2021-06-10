@@ -1,6 +1,6 @@
 //github.com/migace/js-plain-mvc/blob/master/src/View.ts
 
-class View {
+class GameInterface {
 	scoreBoard: HTMLElement | null;
 	userSelect: NodeListOf<Element>;
 	playAgainButton: HTMLElement | null;
@@ -45,13 +45,19 @@ class View {
 
 	//Handler is round game play
 	//Another one would be about scores and logs
-	selectWeapon(handler: Function) {
+	selectWeapon = (game: any): void => {
 		this.userSelect?.forEach((weapon) => {
-			weapon.addEventListener('click', function () {
-				handler(weapon.id);
+			weapon.addEventListener('click', () => {
+				game.playRound(weapon.id);
 			});
 		});
-	}
+	};
+
+	scoreObserver = (game: any) => {
+		let currentScore = game.scores;
+	};
+
+	announceResults(game: any) {}
 
 	bindSelectionHoverEvents() {
 		this.userSelect?.forEach((select) => {
@@ -60,18 +66,25 @@ class View {
 			});
 		});
 
-		this.userSelect.forEach((select) => {
+		this.userSelect.forEach((select): void => {
 			select.addEventListener('mouseleave', (e: Event) => {
 				this.inactiveHover(e);
 			});
 		});
 	}
 
-	bindPlayAgainButton() {
+	bindPlayAgainButton(): void {
 		this.playAgainButton?.addEventListener('click', () => {
 			window.location.reload(true);
 		});
 	}
+
+	//Make an interface
+	bindEvents = (game: any) => {
+		this.bindPlayAgainButton();
+		this.bindSelectionHoverEvents();
+		this.selectWeapon(game);
+	};
 }
 
-export { View as UI };
+export { GameInterface };

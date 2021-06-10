@@ -1,8 +1,6 @@
-import { Game } from './gamePlay';
-import { UI } from './gameUI';
-import { Controller } from './gameController';
+import { Game } from './game';
+import { GameInterface } from './gameUI';
+
 import '../style/style.css';
 
-const rockPaperScissors = new Controller(new Game(), new UI());
-
-rockPaperScissors.render();
+new Game(new GameInterface());
