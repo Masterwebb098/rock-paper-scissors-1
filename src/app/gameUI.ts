@@ -1,6 +1,11 @@
-//github.com/migace/js-plain-mvc/blob/master/src/View.ts
+import rockImageHover from '../assets/images/rock-hover.svg';
+import rockImage from '../assets/images/rock.svg';
+import paperImageHover from '../assets/images/paper-hover.svg';
+import paperImage from '../assets/images/paper.svg';
+import scissorsImageHover from '../assets/images/scissors-hover.svg';
+import scissorsImage from '../assets/images/scissors.svg';
 
-class View {
+class GameInterface {
 	scoreBoard: HTMLElement | null;
 	userSelect: NodeListOf<Element>;
 	playAgainButton: HTMLElement | null;
@@ -15,15 +20,15 @@ class View {
 		const target: HTMLImageElement = <HTMLImageElement>event.target;
 
 		if (target.id === 'rock') {
-			target.src = './src/images/rock-hover.svg';
+			target.src = rockImageHover;
 		}
 
 		if (target.id === 'paper') {
-			target.src = './src/images/paper-hover.svg';
+			target.src = paperImageHover;
 		}
 
 		if (target.id === 'scissors') {
-			target.src = './src/images/scissors-hover.svg';
+			target.src = scissorsImageHover;
 		}
 	}
 
@@ -31,27 +36,32 @@ class View {
 		const target: HTMLImageElement = <HTMLImageElement>event.target;
 
 		if (target.id === 'rock') {
-			target.src = './src/images/rock.svg';
+			target.src = rockImage;
 		}
 
 		if (target.id === 'paper') {
-			target.src = './src/images/paper.svg';
+			target.src = paperImage;
 		}
 
 		if (target.id === 'scissors') {
-			target.src = './src/images/scissors.svg';
+			target.src = scissorsImage;
 		}
 	}
 
 	//Handler is round game play
-	//Another one would be about scores and logs
-	selectWeapon(handler: Function) {
+	selectWeapon = (game: any): void => {
 		this.userSelect?.forEach((weapon) => {
-			weapon.addEventListener('click', function () {
-				handler(weapon.id);
+			weapon.addEventListener('click', () => {
+				game.playRound(weapon.id);
 			});
 		});
-	}
+	};
+
+	scoreObserver = (game: any) => {
+		let currentScore = game.scores;
+	};
+
+	announceResults(game: any) {}
 
 	bindSelectionHoverEvents() {
 		this.userSelect?.forEach((select) => {
@@ -60,18 +70,25 @@ class View {
 			});
 		});
 
-		this.userSelect.forEach((select) => {
+		this.userSelect.forEach((select): void => {
 			select.addEventListener('mouseleave', (e: Event) => {
 				this.inactiveHover(e);
 			});
 		});
 	}
 
-	bindPlayAgainButton() {
+	bindPlayAgainButton(): void {
 		this.playAgainButton?.addEventListener('click', () => {
 			window.location.reload(true);
 		});
 	}
+
+	//Make an interface
+	bindEvents = (game: any) => {
+		this.bindPlayAgainButton();
+		this.bindSelectionHoverEvents();
+		this.selectWeapon(game);
+	};
 }
 
-export { View as UI };
+export { GameInterface };
