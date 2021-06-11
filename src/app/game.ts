@@ -1,7 +1,9 @@
-class Game {
+import { Game as GameInterface } from '../shared/interfaces/game.interface';
+
+class Game implements GameInterface {
 	private _playerScore: number;
 	private _computerScore: number;
-	public gameInterface: any;
+	public userInterface: any;
 
 	private addScore(player: number, computer: number): void {
 		this._playerScore += player;
@@ -14,13 +16,9 @@ class Game {
 		return choice[Math.floor(Math.random() * choice.length)];
 	}
 
-	public get scores(): number[] {
-		return [this._playerScore, this._computerScore];
-	}
-
-	constructor(gameInterface: any) {
-		this.gameInterface = gameInterface;
-		this.gameInterface.bindEvents(this);
+	constructor(userInterface: any) {
+		this.userInterface = userInterface;
+		this.userInterface.bindEvents(this);
 
 		this._playerScore = 0;
 		this._computerScore = 0;
@@ -45,8 +43,10 @@ class Game {
 			this.addScore(0, 1);
 		}
 		if (playerSelect === opponentSelect) this.addScore(0, 0);
+	};
 
-		console.log(this.scores);
+	getScores = (): number[] => {
+		return [this._playerScore, this._computerScore];
 	};
 
 	resetScore = (): void => {

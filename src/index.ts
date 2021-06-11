@@ -1,5 +1,5 @@
 import { Game } from './app/game';
-import { GameInterface } from './app/gameUI';
+import { UserInterface } from './app/gameUI';
 import './assets/style/style.css';
 
-new Game(new GameInterface());
+new Game(new UserInterface());

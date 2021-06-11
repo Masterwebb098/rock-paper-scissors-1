@@ -1,3 +1,5 @@
+import { Game as GameInterface } from '../shared/interfaces/game.interface';
+
 import rockImageHover from '../assets/images/rock-hover.svg';
 import rockImage from '../assets/images/rock.svg';
 import paperImageHover from '../assets/images/paper-hover.svg';
@@ -5,7 +7,10 @@ import paperImage from '../assets/images/paper.svg';
 import scissorsImageHover from '../assets/images/scissors-hover.svg';
 import scissorsImage from '../assets/images/scissors.svg';
 
-class GameInterface {
+/**
+ * Class: User interaction
+ */
+class UserInterface {
 	scoreBoard: HTMLElement | null;
 	userSelect: NodeListOf<Element>;
 	playAgainButton: HTMLElement | null;
@@ -48,8 +53,7 @@ class GameInterface {
 		}
 	}
 
-	//Handler is round game play
-	selectWeapon = (game: any): void => {
+	selectWeapon = (game: GameInterface): void => {
 		this.userSelect?.forEach((weapon) => {
 			weapon.addEventListener('click', () => {
 				game.playRound(weapon.id);
@@ -57,11 +61,11 @@ class GameInterface {
 		});
 	};
 
-	scoreObserver = (game: any) => {
-		let currentScore = game.scores;
+	scoreObserver = (game: GameInterface) => {
+		let currentScore: number[] = game.getScores();
 	};
 
-	announceResults(game: any) {}
+	announceResults(game: GameInterface) {}
 
 	bindSelectionHoverEvents() {
 		this.userSelect?.forEach((select) => {
@@ -78,17 +82,16 @@ class GameInterface {
 	}
 
 	bindPlayAgainButton(): void {
-		this.playAgainButton?.addEventListener('click', () => {
+		this.playAgainButton?.addEventListener('click', (): void => {
 			window.location.reload(true);
 		});
 	}
 
-	//Make an interface
-	bindEvents = (game: any) => {
+	bindEvents = (game: GameInterface): void => {
 		this.bindPlayAgainButton();
 		this.bindSelectionHoverEvents();
 		this.selectWeapon(game);
 	};
 }
 
-export { GameInterface };
+export { UserInterface };
