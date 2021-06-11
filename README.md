@@ -1,10 +1,10 @@
 ![demo](./src/assets/images/readme/demo.png?raw=true)
 
-# (CURRENTLY REFACTORING) Rock Paper Scissors Web Game
+# Rock Paper Scissors Web Game
 
 A simple webpage that let users play rock-paper-scissors against the computer.
 
-**Link To Demo**: Currently on refactoring stage
+**Link To Demo**: https://re-nanashi.github.io/rock-paper-scissors/
 
 ## Description
 
