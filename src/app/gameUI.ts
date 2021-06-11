@@ -44,7 +44,6 @@ class GameInterface {
 	}
 
 	//Handler is round game play
-	//Another one would be about scores and logs
 	selectWeapon = (game: any): void => {
 		this.userSelect?.forEach((weapon) => {
 			weapon.addEventListener('click', () => {

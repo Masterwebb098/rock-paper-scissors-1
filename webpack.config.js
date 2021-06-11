@@ -11,19 +11,13 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
-				use: {
-					loader: 'file-loader',
-					options: {
-						esModule: false,
-					},
-				},
+				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+				type: 'asset/resource',
 			},
 			{
 				test: /\.html$/,
 				use: ['html-loader'],
 			},
-
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader'],
