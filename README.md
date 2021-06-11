@@ -1,4 +1,4 @@
-![demo](./src/images/readme/demo.png?raw=true)
+![demo](./src/assets/images/readme/demo.png?raw=true)
 
 # (CURRENTLY REFACTORING) Rock Paper Scissors Web Game
 
@@ -12,7 +12,7 @@ A simple beginner webpage that uses HTML, CSS, and Javascript. It runs a game of
 
 ### Mobile Display
 
-<img src="./src/images/readme/demo-mobile.png" height="700">
+<img src="./src/assets/images/readme/demo-mobile.png" height="700">
 
 ### Things that I learned
 
